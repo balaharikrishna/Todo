@@ -1,0 +1,62 @@
+.submitTasksHeading{
+    color: white;
+    text-align: center;
+}
+.CompletedTasksButton{
+    background-color: lightseagreen !important; 
+    color: white !important;
+}
+.SubmittedTasksBody{
+    overflow-y: scroll !important;
+    height: 355px !important;
+}
+
+.taskcardSubmitted{
+    margin-bottom: 10px;
+}
+
+.completedTasksheader{
+    background-color: lightseagreen !important;
+    display: grid !important;
+    grid-template-columns: 90% 10% !important;
+    text-align: center;
+    padding: 0 10px;
+
+    .completedTasksHeading {
+        color: white;
+    }
+}
+
+.noTasksSubmitted{
+    align-items: center !important;
+    background-color: lightslategrey !important;
+    color: white !important;
+    text-align: center !important;
+    width: 400px !important;
+    margin: auto;
+    margin-top: 25% !important;
+
+}
+
+.SubmitTasksMainHeading {
+    .SubmittedTaskHeading {
+        margin-left: 15px;
+    }
+
+    .SubmittedpriorityHeading {
+        margin-left: 150px;
+    }
+
+    .SubmittedTasksActions {
+        margin-left: 75px;
+    }
+
+    color: white;
+    font-weight: bolder;
+    margin: 10px 0 0 0;
+  //  background-color: lightseagreen;
+  //  height: 45px;
+    font-size: 20px;
+}
+
+

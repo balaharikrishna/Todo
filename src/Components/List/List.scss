@@ -1,0 +1,43 @@
+.ListMainDiv {
+    .listcard {
+        animation: fadeIn 2s;
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        cursor: pointer;
+
+        .editoption {
+            color: blue;
+            cursor: pointer;
+
+            &:hover {
+                color: brown;
+            }
+        }
+
+        .deleteoption {
+            color: red;
+            cursor: pointer;
+
+            &:hover {
+                color: brown;
+            }
+        }
+    }
+    .noListsAvailable {
+        background-color: lightslategrey;
+        color: white;
+        text-align: center;
+        width: 209px !important;
+        margin: 150px 0 0 60px;
+    }
+}
+
