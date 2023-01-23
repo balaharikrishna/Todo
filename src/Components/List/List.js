@@ -1,48 +1,46 @@
 import './List.scss';
 import { useEffect, useState } from 'react';
 
-const List = ({show,changeShowState,geteditListid,getListid,changeShowDelete,ListsUpdated}) => {
- const [activelist,setActiveList] = useState();
+const List = ({show,changeShowState,getEditListId,getListId,changeShowDelete,listsUpdated}) => {
+ const [activeList,setActiveList] = useState();
  let localData = JSON.parse(localStorage.getItem("tododata"));
-useEffect(()=>{
-  
-  localData = JSON.parse(localStorage.getItem("tododata"))
+useEffect(() => {
+  localData = JSON.parse(localStorage.getItem("tododata"));
 
-  if(activelist == undefined || !activelist >= 0){
-    setActiveList(localData ? localData[0].id : "") ;
-    getListid(localData ? localData[0].id : 0);
-   }
-   console.log("Selected list",activelist);
-},[ListsUpdated])
+  if (activeList == undefined || !activeList >= 0) {
+    setActiveList(localData ? localData[0].id : "");
+    getListId(localData ? localData[0].id : 0);
+  }
+}, [listsUpdated]);
 
- const deleteList = (listid) =>{
-  changeShowDelete(listid);
+ const deleteList = (id) =>{
+  changeShowDelete(id);
   }
 
- const editlist = (listid) =>{
+ const editList = (id) =>{
   changeShowState(!show);
-  geteditListid(listid);
+  getEditListId(id);
  }
 
  const displayTasks = (id) =>{
-    getListid(id && id>0 ? id : 0);
+    getListId(id && id>0 ? id : 0);
   setActiveList(id);
  }
 
   return (
-    <div className="ListMainDiv">
+    <div className="listMainDiv">
       {localData ? (
         <div>
           {localData.map((x) => {
             return (
               <div
-                className="card listcard"
+                className="card listCard"
                 style={{
-                  backgroundColor: x.id == activelist ? "lightgreen" : "white",
+                  backgroundColor: x.id == activeList ? "lightgreen" : "white",
                 }}
                 onClick={() => displayTasks(x.id)}
               >
-                <div className="card-body listcardbody">
+                <div className="card-body listCardBody">
                   <div className="row">
                     <div className="col-8">
                       <p className="card-title">{x.listName}</p>
@@ -51,14 +49,14 @@ useEffect(()=>{
                       <div className="row">
                         <div className="col-6">
                           <i
-                            className="fa fa-pencil editoption"
-                            onClick={() => editlist(x.id)}
+                            className="fa fa-pencil editOption"
+                            onClick={() => editList(x.id)}
                             aria-hidden="true"
                           ></i>
                         </div>
                         <div className="col-6">
                           <i
-                            className="fa fa-trash deleteoption"
+                            className="fa fa-trash deleteOption"
                             aria-hidden="true"
                             onClick={() => deleteList(x.id)}
                           ></i>

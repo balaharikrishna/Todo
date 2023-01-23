@@ -6,50 +6,49 @@ import "./AddList.scss";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Addlist = ({ show, changeShowState, editListid, doListsUpdated,ListsUpdated}) => {
+const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdated}) => {
 
   const [listName, setListName] = useState("");   
   let localData = JSON.parse(localStorage.getItem("tododata"));
 
-  let ArrObjsLen = localData? localData.length - 1: 0;
-  let listid = localData == null ||localData== undefined ||localData== "" ?  0 : localData[ArrObjsLen].id;
+  let arrObjsLength = localData? localData.length - 1: 0;
+  let listId = localData == null ||localData== undefined ||localData== "" ?  0 : localData[arrObjsLength].id;
   
   useEffect(()=>{
     localData = JSON.parse(localStorage.getItem("tododata"));
-  },[ListsUpdated])
+  },[listsUpdated])
 
   useEffect(() => {
    localData = JSON.parse(localStorage.getItem("tododata"));
-    const list = localData == null || undefined || "" ? "" : localData.find(x => x.id == editListid);
+    const list = localData == null || undefined || "" ? "" : localData.find(x => x.id == editListId);
       setListName(list ? list.listName : "");
-  },[editListid]); 
+  },[editListId]); 
 
-  const HandleListInput = (e) =>{
+  const handleListInput = (e) =>{
     let value =  e.target.value;
     setListName(value);
   }
 
-  const saveData = (dataFromAddlist) => {
+  const saveData = (dataFromAddList) => {
     localData = JSON.parse(localStorage.getItem("tododata"));
-    let newData = localData ? [...localData, Object.assign({listName:dataFromAddlist}, { id: listid + 1 }, {tasks: []})] : [{listName:dataFromAddlist,id: listid + 1,tasks: []}];
+    let newData = localData ? [...localData, Object.assign({listName:dataFromAddList}, { id: listId + 1 }, {tasks: []})] : [{listName:dataFromAddList,id: listId + 1,tasks: []}];
     localStorage.setItem("tododata", JSON.stringify(newData));
-    console.log(newData);
     localData = JSON.parse(localStorage.getItem("tododata"));
-    listid = listid+1;
+    listId = listId+1;
     setListName("");
     doListsUpdated(Math.random());
     notify("Record Added Successfully");
   };
 
-  const addlist = (e) => {
+  const addList = (e) => {
     e.preventDefault();
     saveData(listName);
   };
 
-  const updatelist = (e) => {
+  const updateList = (e) => {
     e.preventDefault();
-    const editListid = e.target.id.value;
-    let index = localData.findIndex(x => x.id == editListid);
+    const editListId = e.target.id.value;
+    let index = localData.findIndex(x => x.id == editListId);
     localData[index].listName = listName;
     localStorage.setItem("tododata", JSON.stringify(localData));
     doListsUpdated(Math.random()); 
@@ -73,14 +72,16 @@ const Addlist = ({ show, changeShowState, editListid, doListsUpdated,ListsUpdate
   return (
     <div className="container">
       <Modal show={show} onHide={changeShowState}>
-        <form onSubmit={editListid > 0 ? updatelist : addlist }>
-          <Modal.Header closeButton className="addlistheader">
-            <Modal.Title className="addlistheading">{editListid > 0 ? "Update List" : "Add List"}</Modal.Title>
+        <form onSubmit={editListId > 0 ? updateList : addList}>
+          <Modal.Header closeButton className="addListHeader">
+            <Modal.Title className="addListHeading">
+              {editListId > 0 ? "Update List" : "Add List"}
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="row">
               <div className="col-3 ">
-                <label className="namelabel">Name:</label>
+                <label className="nameLabel">Name:</label>
               </div>
               <div className="col-7 ">
                 <input
@@ -88,22 +89,40 @@ const Addlist = ({ show, changeShowState, editListid, doListsUpdated,ListsUpdate
                   id="listName"
                   name="listName"
                   value={listName}
-                  onChange={HandleListInput}
-                  className="ListNameInputBox"
+                  onChange={handleListInput}
+                  className="listNameInputBox"
                   placeholder="Please Enter List Name"
                   autoComplete="off"
                   required
                 />
-                <input type="hidden" name="id" value={editListid ? editListid : ""} />
+                <input
+                  type="hidden"
+                  name="id"
+                  value={editListId ? editListId : ""}
+                />
               </div>
             </div>
           </Modal.Body>
-          <Modal.Footer className="modal-footer">
+          <Modal.Footer className="modal-Footer">
             <Button variant="secondary" onClick={changeShowState}>
-            <i class="fa fa-times" aria-hidden="true">&nbsp;Close</i>
+              <i class="fa fa-times" aria-hidden="true">
+                &nbsp;Close
+              </i>
             </Button>
-            <Button variant="success" type="submit" onClick={listName.length > 0 ? changeShowState : ""}>
-              {editListid > 0 ? <i class="fa fa-pencil" aria-hidden="true">&nbsp;Update</i> : <i class="fa fa-plus" aria-hidden="true">&nbsp;Add</i>}
+            <Button
+              variant="success"
+              type="submit"
+              onClick={listName.length > 0 ? changeShowState : ""}
+            >
+              {editListId > 0 ? (
+                <i class="fa fa-pencil" aria-hidden="true">
+                  &nbsp;Update
+                </i>
+              ) : (
+                <i class="fa fa-plus" aria-hidden="true">
+                  &nbsp;Add
+                </i>
+              )}
             </Button>
           </Modal.Footer>
         </form>

@@ -1,96 +1,91 @@
 .container {
-    margin-bottom: 10px;
+    margin-bottom: 1%;
 
     .addList {
         float: right;
     }
-    
+
     .title {
         font-weight: bold;
-        font-size: 30px;
+        font-size: 170%;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 2.5%;;
     }
 
-    .HomeLeftGrid {
+    .homeLeftGrid {
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 330px;
+        height: 20.625rem;
         border: 1px solid black;
-        border-radius: 0 20px;
+        border-radius: 0 1.25rem;
         background-color: lightblue;
     }
 
-    .HomeRightGrid {
+    .homeRightGrid {
         overflow-y: scroll;
         overflow-x: hidden;
         height: 330px;
         border: 1px solid black;
-        border-radius: 0 20px;
+        border-radius: 0 1.25rem;
         background-color: lightblue;
     }
 
     .listsHeading {
         color: white;
         font-weight: bolder;
-        margin: 10px 0 0 0;
+        margin: 0.625rem 0 0 0;
         background-color: lightseagreen;
-        height: 45px;
-        font-size: 20px;
-        padding-top: 5px;
-        border-radius: 20px 20px 0 0;
+        height: 2.813rem;
+        font-size: 1.25rem;
+        padding-top: 0.313rem;
+        border-radius: 1.25rem 1.25rem 0 0;
 
         .listsHeading {
-            margin-left: 45px;
+            margin-left: 2.813rem;
         }
 
         .actionsListsHeading {
-            margin-left: 145px;
+            margin-left: 9.063rem;
         }
     }
 
-    .TasksMainHeading {
-        .CompletedHeading {
-            margin-left: 20px;
+    .tasksMainHeading {
+        .completedHeading {
+            margin-left: 1.25rem;
         }
 
         .taskHeading {
-            margin-left: 70px;
+            margin-left: 4.375rem;
         }
 
         .priorityHeading {
-            margin-left: 155px;
+            margin-left: 9.688rem;
         }
 
         .actionsTasksHeading {
-            margin-left: 130px;
+            margin-left: 8.125rem;
         }
 
         color: white;
         font-weight: bolder;
-        margin: 10px 0 0 0;
+        margin: 0.625rem 0 0 0;
         background-color: lightseagreen;
-        height: 45px;
-        font-size: 20px;
-        padding-top: 5px;
-        border-radius: 20px 20px 0 0;
+        height: 2.813rem;
+        font-size: 1.25rem;
+        padding-top: 0.313rem;
+        border-radius: 1.25rem 1.25rem 0 0;
     }
 
-    .addlistButton {
+    .addListButton {
         background-color: lightseagreen;
         color: white;
     }
 
-    .CompletedTasksButton{
+    .completedTasksButton {
         float: right;
     }
 
     .btn-primary {
         background-color: lightseagreen !important;
-    }
-
-    .listcard {
-        width: 19rem;
-        margin: 10px 0 10px 17px;
     }
 }

@@ -6,21 +6,21 @@ import "./Task.scss";
 
 const Task = ({
   changeShowStateTask,
-  listid,
-  geteditTaskid,
-  clearTaskfields,
+  listId,
+  getEditTaskId,
+  clearTaskFields,
   changeShowDeleteTask,
   getDeleteTaskId,
-  ListsUpdated,
-  TasksUpdated,
+  listsUpdated,
+  tasksUpdated,
   doTasksUpdated
 }) => {
   const [listName, setListName] = useState("");
-  const [taskdata, setTaskData] = useState(
+  const [taskData, setTaskData] = useState(
     JSON.parse(localStorage.getItem("tododata"))
       ? [
           JSON.parse(localStorage.getItem("tododata"))?.findIndex(
-            (x) => x.id == listid
+            (x) => x.id == listId
           ),
         ]
       : "".tasks?.filter((i) => i.isChecked === false)
@@ -28,27 +28,27 @@ const Task = ({
  
   let localData = JSON.parse(localStorage.getItem("tododata"));
 
-  if (listid == 0 || listid == undefined || listid == "") {
-    listid = localData && localData[0] ? localData[0].id : 0;
+  if (listId == 0 || listId == undefined || listId == "") {
+    listId = localData && localData[0] ? localData[0].id : 0;
   }
 
   useEffect(() => {
-    if (listid == 0 || listid == undefined || listid == "") {
-      listid = localData ? localData[0].id : 0;
+    if (listId == 0 || listId == undefined || listId == "") {
+      listId = localData ? localData[0].id : 0;
       localData = JSON.parse(localStorage.getItem("tododata"));
-    } else if (listid > 0 )  {
+    } else if (listId > 0 )  {
       localData = JSON.parse(localStorage.getItem("tododata"));
-      const list = localData?.find((x) => x.id == listid);
+      const list = localData?.find((x) => x.id == listId);
       setListName(list ? list.listName : "");
     }
-  }, [listid, ListsUpdated]);
+  }, [listId, listsUpdated]);
 
-  let listIndex = localData ? localData.findIndex((x) => x.id == listid) : "";
+  let listIndex = localData ? localData.findIndex((x) => x.id == listId) : "";
   
   useEffect(() => {
     setTaskData(
       localData && localData[listIndex]
-        ? listid != 0 && localData[listIndex].tasks
+        ? listId != 0 && localData[listIndex].tasks
           ? localData[listIndex].tasks.filter((i) => i.isChecked === false)
           : localData[0].tasks.filter((i) => i.isChecked !== true)
         : ""
@@ -57,8 +57,8 @@ const Task = ({
 
   useEffect(() => {
     localData = JSON.parse(localStorage.getItem("tododata"));
-    if (localData && listid > 0 && listid != "") {
-      let listIndex = localData.findIndex((x) => x.id == listid);
+    if (localData && listId > 0 && listId != "") {
+      let listIndex = localData.findIndex((x) => x.id == listId);
       setTaskData(
         localData[listIndex].tasks.filter((i) => i.isChecked === false)
       );
@@ -68,16 +68,16 @@ const Task = ({
         localData ? localData[0].tasks.filter((i) => i.isChecked !== true) : ""
       );
     }
-  }, [TasksUpdated, ListsUpdated, listid]);
+  }, [tasksUpdated, listsUpdated, listId]);
 
-  const editTask = (taskid) => {
+  const editTask = (id) => {
     changeShowStateTask();
-    geteditTaskid(taskid);
+    getEditTaskId(id);
   };
 
-  const deleteTask = (taskid) => {
+  const deleteTask = (id) => {
     changeShowDeleteTask();
-    getDeleteTaskId(taskid);
+    getDeleteTaskId(id);
   };
 
   const notify = () => {
@@ -106,7 +106,7 @@ const Task = ({
     });
 
     localStorage.setItem("tododata", JSON.stringify(localData));
-    const taskData = localData.find(list => list.id == listid)?.tasks.filter(task => !task.isChecked);
+    const taskData = localData.find(list => list.id == listId)?.tasks.filter(task => !task.isChecked);
     setTaskData(taskData);
     doTasksUpdated(Math.random());
     notify();
@@ -126,18 +126,18 @@ const Task = ({
 
   return (
     <div>
-      {localData && listid > 0 &&
+      {localData && listId > 0 &&
       localData[listIndex] &&
-      localData[localData.findIndex((x) => x.id == listid)]?.tasks.length > 0 &&
-      taskdata.length != 0 ? (
+      localData[localData.findIndex((x) => x.id == listId)]?.tasks.length > 0 &&
+      taskData.length != 0 ? (
         <div>
-          {taskdata.sort(tasksCompare).map((x) => {
+          {taskData.sort(tasksCompare).map((x) => {
             return (
               <div
-                className="card taskcard "
+                className="card taskCard"
                 style={{ backgroundColor: taskColors[x.priority] }}
               >
-                <div className="card-body Taskcardbody">
+                <div className="card-body taskCardBody">
                   <div className="row">
                     <div className="col-3">
                       <input
@@ -159,14 +159,14 @@ const Task = ({
                       <div className="row">
                         <div className="col-6">
                           <i
-                            className="fa fa-pencil editoption"
+                            className="fa fa-pencil editOption"
                             onClick={() => editTask(x.id)}
                             aria-hidden="true"
                           ></i>
                         </div>
                         <div className="col-6">
                           <i
-                            className="fa fa-trash deleteoption"
+                            className="fa fa-trash deleteOption"
                             onClick={() => deleteTask(x.id)}
                             aria-hidden="true"
                           ></i>
@@ -182,7 +182,7 @@ const Task = ({
           <button
               type="button"
               className="btn btn-primary addTaskFloatingButton"
-              onClick={clearTaskfields}
+              onClick={clearTaskFields}
             >
               <i className="fa fa-plus" aria-hidden="true"></i>
             </button>
@@ -193,14 +193,13 @@ const Task = ({
           <div className="row">
             <div className="alert noTaskAvailable" role="alert">
               {listName
-                ? "No Tasks Available for " + listName
+                ? `No Tasks Available for  ${listName} ...`
                 : "No data Available"}
-              ...
             </div>
             <div className="col-12">{
               listName ?  <button
               type="button"
-              className="btn btn-primary addtaskButton"
+              className="btn btn-primary addTaskButton"
               onClick={changeShowStateTask}
             >
               Add Task

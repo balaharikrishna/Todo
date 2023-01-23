@@ -1,16 +1,16 @@
-.DeleteModel {
+.deleteModel {
     .modal-content {
         width: 55%;
-        margin: 150px;
+        margin: 35%;
     }
 
-    .ModalBody {
+    .modalBody {
         background-color: lightpink;
-        border-radius: 5px 5px 0 0;
+        border-radius: 0.313rem 0.313rem 0 0;
     }
 
     .modal-footer {
-        background-color: paleturquoise !important;
+        background-color: paleturquoise;
     }
 
 }

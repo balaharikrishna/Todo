@@ -1,7 +1,9 @@
-.ListMainDiv .listcard {
+.listMainDiv .listCard {
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
   cursor: pointer;
+  width: 19.5rem;
+  margin: 0.625rem 0 0.625rem 0.938rem;
 }
 @-webkit-keyframes fadeIn {
   0% {
@@ -19,24 +21,18 @@
     opacity: 1;
   }
 }
-.ListMainDiv .listcard .editoption {
+.listMainDiv .listCard .editOption {
   color: blue;
   cursor: pointer;
 }
-.ListMainDiv .listcard .editoption:hover {
-  color: brown;
-}
-.ListMainDiv .listcard .deleteoption {
+.listMainDiv .listCard .deleteOption {
   color: red;
   cursor: pointer;
 }
-.ListMainDiv .listcard .deleteoption:hover {
-  color: brown;
-}
-.ListMainDiv .noListsAvailable {
-  background-color: lightseagreen;
+.listMainDiv .noListsAvailable {
+  background-color: lightslategrey;
   color: white;
   text-align: center;
-  width: 209px !important;
-  margin: 150px 0 0 60px;
-}
+  width: 13.063rem !important;
+  margin: 9.375rem 0 0 3.75rem;
+}/*# sourceMappingURL=List.css.map */

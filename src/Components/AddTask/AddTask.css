@@ -1,27 +1,27 @@
 .addTaskHeader {
   background-color: lightseagreen;
   display: grid !important;
-  grid-template-columns: 90% 10% !important;
+  grid-template-columns: 90% 10%;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 .addTaskHeader .addTaskHeading {
   color: white;
 }
 
 .priorityField {
-  margin-top: 5px !important;
+  margin-top: 0.313rem !important;
 }
 
-.namelabel,
-.prioritylabel {
-  float: right !important;
+.nameLabel,
+.priorityLabel {
+  float: right;
 }
 
-.TaskNameInputBox {
-  width: 130% !important;
+.taskNameInputBox {
+  width: 130%;
 }
 
-.modal-footer {
+.modal-footer-addTask {
   background-color: powderblue !important;
-}
+}/*# sourceMappingURL=AddTask.css.map */

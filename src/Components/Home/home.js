@@ -11,53 +11,53 @@ import CompletedTasks from '../CompletedTasks/CompletedTasks.js';
 const Home = () => {
   const [show, setShow] = useState(false);
   const [showTask, setTaskShow] = useState(false);
-  const [EditListid, setEditListid] = useState();
+  const [editListId, setEditListId] = useState();
   const [listId, setListId] = useState(0);
   const [editTaskId, setEditTaskId] = useState(0);
   const [showDelete, setShowDelete] = useState(false);
   const [deleteListId, setDeleteListId] = useState();
   const [deleteTaskId, setDeleteTaskId] = useState();
-  const [ListsUpdated, setListsUpdated] = useState(0);
-  const [TasksUpdated, setTasksUpdated] = useState(0);
+  const [listsUpdated, setListsUpdated] = useState(0);
+  const [tasksUpdated, setTasksUpdated] = useState(0);
   const [showSubmittedTasks, setshowSubmittedTasks] = useState(false);
 
   //Lists//
 
   const doListsUpdated = (value) => {
     setListsUpdated(value);
-    getListid();
+    getListId();
   };
 
   const changeShowState = () => {
     setShow(!show);
   };
 
-  const getEditListid = (id) => {
-    setEditListid(id);
+  const getEditListId = (id) => {
+    setEditListId(id);
   };
 
   const clearAllFields = () => {
-    setEditListid(0);
+    setEditListId(0);
     changeShowState();
   };
-  const changeShowDelete = (deletelistid) => {
+  const changeShowDelete = (id) => {
     setShowDelete(!showDelete);
-    deletelistid > 0 ? setDeleteListId(deletelistid) : setDeleteListId();
+    id > 0 ? setDeleteListId(id) : setDeleteListId();
   };
 
   ///Tasks///
 
-  const getListid = (e) => {
+  const getListId = (e) => {
     setListId(e);
   };
 
   const changeShowStateTask = () => {
     setTaskShow(!showTask);
   };
-  const geteditTaskid = (taskid) => {
-    setEditTaskId(taskid);
+  const getEditTaskId = (id) => {
+    setEditTaskId(id);
   };
-  const clearTaskfields = () => {
+  const clearTaskFields = () => {
     setEditTaskId(0);
     changeShowStateTask();
   };
@@ -65,8 +65,8 @@ const Home = () => {
     setTasksUpdated(value);
   };
 
-  const getDeleteTaskId = (deltaskid) => {
-    setDeleteTaskId(deltaskid);
+  const getDeleteTaskId = (id) => {
+    setDeleteTaskId(id);
   };
 
   const changeShowDeleteTask = () => {
@@ -97,7 +97,7 @@ const Home = () => {
           <div>
             <button
               type="button"
-              className="btn btn-primary addlistButton"
+              className="btn btn-primary addListButton"
               onClick={clearAllFields}
             >
               <i className="fa fa-plus" aria-hidden="true">
@@ -108,7 +108,7 @@ const Home = () => {
             {localStorage.getItem("tododata") && listId >= 0 ? (
               <button
                 type="button"
-                className="btn btn-primary CompletedTasksButton"
+                className="btn btn-primary completedTasksButton"
                 onClick={changeShowSubmittedTasks}
               >
                 <i className="fa fa-check" aria-hidden="true">
@@ -123,19 +123,19 @@ const Home = () => {
         <Addlist
           show={show}
           changeShowState={changeShowState}
-          editListid={EditListid}
+          editListId={editListId}
           doListsUpdated={doListsUpdated}
-          ListsUpdated={ListsUpdated}
+          listsUpdated={listsUpdated}
         />
         <AddTask
           showAddTask={showTask}
           changeShowStateTask={changeShowStateTask}
-          listid={listId}
+          listId={listId}
           editTaskId={editTaskId}
           doTasksUpdated={doTasksUpdated}
-          TasksUpdated={TasksUpdated}
-          ListsUpdated={ListsUpdated}
-          geteditTaskid={geteditTaskid}
+          tasksUpdated={tasksUpdated}
+          listsUpdated={listsUpdated}
+          getEditTaskId={getEditTaskId}
         />
         <DeletePopup
           showDelete={showDelete}
@@ -145,8 +145,8 @@ const Home = () => {
           deleteTaskId={deleteTaskId}
           doListsUpdated={doListsUpdated}
           doTasksUpdated={doTasksUpdated}
-          ListsUpdated={ListsUpdated}
-          TasksUpdated={TasksUpdated}
+          listsUpdated={listsUpdated}
+          tasksUpdated={tasksUpdated}
           getDeleteTaskId={getDeleteTaskId}
         />
         <CompletedTasks
@@ -154,8 +154,8 @@ const Home = () => {
           changeShowSubmittedTasks={changeShowSubmittedTasks}
           listId={listId}
           doTasksUpdated={doTasksUpdated}
-          TasksUpdated={TasksUpdated}
-          ListsUpdated={ListsUpdated}
+          tasksUpdated={tasksUpdated}
+          listsUpdated={listsUpdated}
         />
         <ToastContainer />
         <div className="col-12">
@@ -165,34 +165,34 @@ const Home = () => {
                 <span className="listsHeading">Lists</span>
                 <span className="actionsListsHeading">Actions</span>
               </p>
-              <div className=" mr-2 HomeLeftGrid">
+              <div className=" mr-2 homeLeftGrid">
                 <List
                   show={show}
                   changeShowState={changeShowState}
-                  geteditListid={getEditListid}
-                  getListid={getListid}
+                  getEditListId={getEditListId}
+                  getListId={getListId}
                   changeShowDelete={changeShowDelete}
-                  ListsUpdated={ListsUpdated}
+                  listsUpdated={listsUpdated}
                 />
               </div>
             </div>
             <div className="col-8">
-              <p className="TasksMainHeading">
-                <span className="CompletedHeading">Completed?</span>
+              <p className="tasksMainHeading">
+                <span className="completedHeading">Completed?</span>
                 <span className="taskHeading">Tasks</span>
                 <span className="priorityHeading">Priority</span>
                 <span className="actionsTasksHeading">Actions</span>
               </p>
-              <div className="HomeRightGrid">
+              <div className="homeRightGrid">
                 <Task
                   changeShowStateTask={changeShowStateTask}
-                  listid={listId}
-                  geteditTaskid={geteditTaskid}
-                  clearTaskfields={clearTaskfields}
-                  TasksUpdated={TasksUpdated}
+                  listId={listId}
+                  getEditTaskId={getEditTaskId}
+                  clearTaskFields={clearTaskFields}
+                  tasksUpdated={tasksUpdated}
                   changeShowDeleteTask={changeShowDeleteTask}
                   getDeleteTaskId={getDeleteTaskId}
-                  ListsUpdated={ListsUpdated}
+                  listsUpdated={listsUpdated}
                   doTasksUpdated={doTasksUpdated}
                 />
               </div>

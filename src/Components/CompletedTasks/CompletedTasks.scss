@@ -1,60 +1,64 @@
-.submitTasksHeading{
+.submitTasksHeading {
     color: white;
     text-align: center;
 }
-.CompletedTasksButton{
-    background-color: lightseagreen !important; 
+
+.completedTasksButton {
+    background-color: lightseagreen !important;
     color: white !important;
 }
-.SubmittedTasksBody{
-    overflow-y: scroll !important;
-    height: 355px !important;
+
+.submittedTasksBody {
+    overflow-y: scroll;
+    height: 22.188rem;
+    background-color: aliceblue
 }
 
-.taskcardSubmitted{
-    margin-bottom: 10px;
+.taskCardSubmitted {
+    margin-bottom: 0.625rem;
 }
 
-.completedTasksheader{
-    background-color: lightseagreen !important;
+.completedTasksHeader {
+    background-color: lightseagreen;
     display: grid !important;
-    grid-template-columns: 90% 10% !important;
+    grid-template-columns: 90% 10%;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 0.625rem;
 
     .completedTasksHeading {
         color: white;
     }
 }
 
-.noTasksSubmitted{
-    align-items: center !important;
+.noTasksSubmitted {
+    align-items: center;
     background-color: lightslategrey !important;
     color: white !important;
-    text-align: center !important;
-    width: 400px !important;
+    text-align: center;
+    width: 25rem !important;
     margin: auto;
     margin-top: 25% !important;
 
 }
 
-.SubmitTasksMainHeading {
-    .SubmittedTaskHeading {
-        margin-left: 15px;
+.submitTasksMainHeading {
+    .submittedTaskHeading {
+        margin-left: 5%;
     }
 
-    .SubmittedpriorityHeading {
-        margin-left: 150px;
+    .submittedPriorityHeading {
+        margin-left: 33%;
     }
 
-    .SubmittedTasksActions {
-        margin-left: 75px;
+    .submittedTasksActions {
+        margin-left: 20%;
     }
 
     color: white;
     font-weight: bolder;
-    margin: 10px 0 0 0;
-    font-size: 20px;
+    margin: 0;
+    font-size: 80%;
 }
-
-
+.modal-footerCompletedTasks{
+    background-color: paleturquoise !important;
+}

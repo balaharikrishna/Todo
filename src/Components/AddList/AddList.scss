@@ -1,24 +1,24 @@
-.addlistheader {
+.addListHeader {
     background-color: lightseagreen;
     display: grid !important;
-    grid-template-columns: 90% 10% !important;
+    grid-template-columns: 90% 10%;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 0.625rem;
 
-    .addlistheading {
+    .addListHeading {
         color: white;
 
     }
 }
 
-.namelabel {
-    float: right !important;
+.nameLabel {
+    float: right;
 }
 
-.ListNameInputBox {
-    width: 130% !important;
+.listNameInputBox {
+    width: 130%;
 }
 
-.modal-footer {
+.modal-Footer {
     background-color: powderblue !important;
 }

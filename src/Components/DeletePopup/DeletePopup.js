@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./DeletePopup.scss";
 
-const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,listId,TasksUpdated,ListsUpdated,doListsUpdated,doTasksUpdated,getDeleteTaskId}) =>{
+const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,listId,tasksUpdated,listsUpdated,doListsUpdated,doTasksUpdated,getDeleteTaskId}) =>{
 
   const [savedItems,setSavedItems] = useState(JSON.parse(localStorage.getItem("tododata")))
 
@@ -15,13 +15,13 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
   
   useEffect(()=>{
     setSavedItems(JSON.parse(localStorage.getItem("tododata")));
-  },[TasksUpdated,ListsUpdated])
+  },[tasksUpdated,listsUpdated])
 
   const deleteList = (e) => {
     e.preventDefault();
     let filteredData = savedItems.filter((i) => i.id !== deleteListId);
-    let filteredjsondata = JSON.stringify(filteredData);
-    localStorage.setItem("tododata", filteredjsondata);
+    let filteredJsonData = JSON.stringify(filteredData);
+    localStorage.setItem("tododata", filteredJsonData);
     setSavedItems(JSON.parse(localStorage.getItem("tododata")));
     notify("List Deleted Succesfully");
     changeShowDelete();
@@ -65,9 +65,9 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
   }
 
   return(<div className="container">
-  <Modal show={showDelete} onHide={changeShowDelete} className="DeleteModel">
+  <Modal show={showDelete} onHide={changeShowDelete} className="deleteModel">
     <form >
-      <Modal.Body className="ModalBody">
+      <Modal.Body className="modalBody">
         <div className="row">
           <div className="col-12 ">
            <label className="namelabel">Delete {deleteListId > 0 && !deleteTaskId > 0 ? savedItems.find(x => x.id == deleteListId).listName : "" } Permanently?</label>

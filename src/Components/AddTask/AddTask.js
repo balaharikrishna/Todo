@@ -6,37 +6,37 @@ import "./AddTask.scss";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpdated,TasksUpdated,ListsUpdated,geteditTaskid}) => {
+const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listId,doTasksUpdated,tasksUpdated,listsUpdated,getEditTaskId}) => {
 
-  const [TaskName, setTaskName] = useState(""); 
-  const [Priority, setPriority]  = useState("");
+  const [taskName, setTaskName] = useState(""); 
+  const [priority, setPriority] = useState("");
 
- let savedItems = JSON.parse(localStorage.getItem("tododata"))
+ let localData = JSON.parse(localStorage.getItem("tododata"))
 
  useEffect(()=>{
-  savedItems = JSON.parse(localStorage.getItem("tododata"))
- },[TasksUpdated,ListsUpdated])
+  localData = JSON.parse(localStorage.getItem("tododata"))
+ },[tasksUpdated,listsUpdated])
 
   useEffect(() => {
-    savedItems = JSON.parse(localStorage.getItem("tododata"));
-    if(listid == 0 || listid == undefined || listid == ""){
-      listid = savedItems ? savedItems[0].id : "";
-      let listDataIndex = savedItems ? savedItems.findIndex(x => x.id == listid) : "";
-      let task = savedItems? savedItems[listDataIndex].tasks.find(x => x.id == editTaskId) : "";
+    localData = JSON.parse(localStorage.getItem("tododata"));
+    if(listId == 0 || listId == undefined || listId == ""){
+      listId = localData ? localData[0].id : "";
+      let listDataIndex = localData ? localData.findIndex(x => x.id == listId) : "";
+      let task = localData? localData[listDataIndex].tasks.find(x => x.id == editTaskId) : "";
       setTaskName(task ? task.taskName : "");
       setPriority(task ? task.priority : "");  
     }
-    else if(listid && editTaskId == 0){
+    else if(listId && editTaskId == 0){
       setTaskName("");
       setPriority("");
     }
-    else if(listid && editTaskId !==0 ){
-      let listDataIndex = savedItems.findIndex(x => x.id == listid);
-     let task =  savedItems[listDataIndex].tasks.find(x => x.id == editTaskId)
+    else if(listId && editTaskId !==0 ){
+      let listDataIndex = localData.findIndex(x => x.id == listId);
+     let task =  localData[listDataIndex].tasks.find(x => x.id == editTaskId)
       setTaskName(task ? task.taskName : "");
       setPriority(task ? task.priority : "");
     }
-  },[listid,editTaskId,ListsUpdated]); 
+  },[listId,editTaskId,listsUpdated]); 
 
   const handleTask = (e) =>{
     let value =  e.target.value;
@@ -49,21 +49,21 @@ const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpd
   }
 
  const addTask = (e) =>{
-  savedItems = JSON.parse(localStorage.getItem("tododata"))
   e.preventDefault(); 
-
-  if(listid==0 || listid == undefined ){
-    listid = savedItems[0].id;
+  localData = JSON.parse(localStorage.getItem("tododata"))
+  
+  if(listId==0 || listId == undefined ){
+    listId = localData[0].id;
   }
-   var listDataIndex = savedItems.findIndex(x => x.id == listid);
-    const newTask = [...savedItems[listDataIndex].tasks,{
-        id:savedItems[listDataIndex].tasks[savedItems[listDataIndex].tasks.length - 1] ? savedItems[listDataIndex].tasks[savedItems[listDataIndex].tasks.length - 1].id+1 : 1,
-        taskName : TaskName,
-        priority : Priority ? Priority : "P3" ,
+   var listDataIndex = localData.findIndex(x => x.id == listId);
+    const newTask = [...localData[listDataIndex].tasks,{
+        id:localData[listDataIndex].tasks[localData[listDataIndex].tasks.length - 1] ? localData[listDataIndex].tasks[localData[listDataIndex].tasks.length - 1].id+1 : 1,
+        taskName : taskName,
+        priority : priority ? priority : "P3" ,
         isChecked : false
         }]
-        savedItems[listDataIndex].tasks = newTask;
-   localStorage.setItem("tododata",JSON.stringify(savedItems)) ;
+        localData[listDataIndex].tasks = newTask;
+   localStorage.setItem("tododata",JSON.stringify(localData)) ;
    setTaskName("");
    setPriority("P3");
    doTasksUpdated(Math.random());
@@ -71,19 +71,20 @@ const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpd
  }
 
  const updateTask = (e) =>{
-  savedItems = JSON.parse(localStorage.getItem("tododata"));
   e.preventDefault();
-  if(listid==0 || listid == undefined || listid == ""){
-    listid =  savedItems[0].id
+  localData = JSON.parse(localStorage.getItem("tododata"));
+  
+  if(listId==0 || listId == undefined || listId == ""){
+    listId =  localData[0].id
   }
-  let listDataIndex = savedItems.findIndex(x => x.id == listid);
-  let taskIndex = savedItems[listDataIndex].tasks.findIndex(x => x.id == editTaskId);
-  savedItems[listDataIndex].tasks[taskIndex].taskName = TaskName;
-  savedItems[listDataIndex].tasks[taskIndex].priority = Priority;
-  localStorage.setItem("tododata", JSON.stringify(savedItems));
+  let listDataIndex = localData.findIndex(x => x.id == listId);
+  let taskIndex = localData[listDataIndex].tasks.findIndex(x => x.id == editTaskId);
+  localData[listDataIndex].tasks[taskIndex].taskName = taskName;
+  localData[listDataIndex].tasks[taskIndex].priority = priority;
+  localStorage.setItem("tododata", JSON.stringify(localData));
   doTasksUpdated(Math.random());
   notify("Task Updated Successfully");
-  geteditTaskid(0);
+  getEditTaskId(0);
  }
 
  const notify = (note) => {
@@ -112,16 +113,16 @@ const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpd
           <Modal.Body>
             <div className="row">
               <div className="col-3 ">
-                <label className="namelabel">Task Name:</label>
+                <label className="nameLabel">Task Name:</label>
               </div>
               <div className="col-7 ">
                 <input
                   type="text"
-                  id="TaskName"
-                  name="TaskName"
-                  value={TaskName}
+                  id="taskName"
+                  name="taskName"
+                  value={taskName}
                   onChange={handleTask}
-                  className="TaskNameInputBox"
+                  className="taskNameInputBox"
                   placeholder="Please Enter Task Name"
                   autoComplete="off"
                   required
@@ -130,10 +131,10 @@ const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpd
             </div>
             <div className="row priorityField">
               <div className="col-3 ">
-                <label  className="prioritylabel" >Priority:</label>
+                <label  className="priorityLabel" >Priority:</label>
               </div>
               <div className="col-7 ">
-                <select name="Priority" value={Priority} onChange={handlePriority}>
+                <select name="priority" value={priority} onChange={handlePriority}>
                 <option value="P3">P3</option>
                 <option value="P2">P2</option>
                 <option value="P1">P1</option>
@@ -141,11 +142,11 @@ const AddTask = ({ showAddTask, changeShowStateTask,editTaskId,listid,doTasksUpd
               </div>
             </div>
           </Modal.Body>
-          <Modal.Footer className="modal-footer">
+          <Modal.Footer className="modal-footer-addTask">
             <Button variant="secondary" onClick={changeShowStateTask}>
             <i class="fa fa-times" aria-hidden="true">&nbsp;Close</i>
             </Button>
-            <Button variant="success" type="submit" onClick={TaskName.length > 0 ? changeShowStateTask : ""}>
+            <Button variant="success" type="submit" onClick={taskName.length > 0 ? changeShowStateTask : ""}>
               {editTaskId > 0 ? <i class="fa fa-pencil" aria-hidden="true">&nbsp;Update</i> : <i class="fa fa-plus" aria-hidden="true">&nbsp;Add</i>}
             </Button>
           </Modal.Footer>
