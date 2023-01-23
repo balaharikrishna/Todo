@@ -20,7 +20,6 @@ const CompletedTasks = ({listId ,showSubmittedTasks, changeShowSubmittedTasks,do
   useEffect(() => {
     console.log("entered inside")
     localData = JSON.parse(localStorage.getItem("tododata"));
-   // if(localdata && localData[listId]? listId : listId = localData[0].id)
     if(localData && localData !== null ){
       SetFinishedTasks(
         localData[listIndex]?.tasks?.filter((i) => i.isChecked === true)

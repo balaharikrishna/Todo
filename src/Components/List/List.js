@@ -3,13 +3,11 @@ import { useEffect, useState } from 'react';
 
 const List = ({show,changeShowState,geteditListid,getListid,changeShowDelete,ListsUpdated}) => {
  const [activelist,setActiveList] = useState();
-// const [savedItems,setSavedItems] = useState(JSON.parse(localStorage.getItem("tododata")))
  let localData = JSON.parse(localStorage.getItem("tododata"));
 useEffect(()=>{
-  // setSavedItems(JSON.parse(localStorage.getItem("tododata"))); 
+  
   localData = JSON.parse(localStorage.getItem("tododata"))
-  // console.log(savedItems,"saved items frm lists")
-  // console.log(activelist,"active list before entering the if condition")
+
   if(activelist == undefined || !activelist >= 0){
     setActiveList(localData ? localData[0].id : "") ;
     getListid(localData ? localData[0].id : 0);

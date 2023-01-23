@@ -34,16 +34,17 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
 
   const deleteTask = (e) =>{
     e.preventDefault();
-    if(listId==0){
+    if (listId == 0) {
       listId = savedItems[0].id;
     }
-    let listIndex = savedItems.findIndex(x => x.id == listId);
-    savedItems[listIndex].tasks = savedItems[listIndex].tasks.filter((i) => i.id !== deleteTaskId) ;
-     localStorage.setItem("tododata",JSON.stringify(savedItems));
-     setSavedItems(JSON.parse(localStorage.getItem("tododata")));
+    let listIndex = savedItems.findIndex((x) => x.id == listId);
+    savedItems[listIndex].tasks = savedItems[listIndex].tasks.filter(
+      (i) => i.id !== deleteTaskId
+    );
+    localStorage.setItem("tododata", JSON.stringify(savedItems));
+    setSavedItems(JSON.parse(localStorage.getItem("tododata")));
     notify("Task Deleted Succesfully");
-   // deleteTaskId = 0;
-   getDeleteTaskId(0);
+    getDeleteTaskId(0);
     doTasksUpdated(Math.random());
     changeShowDelete();
   }
