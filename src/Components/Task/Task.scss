@@ -1,0 +1,63 @@
+.addMoreTasks {
+    position: absolute;
+    top: 31.575rem;
+    right: 3.875rem;
+
+    .addTaskFloatingButton {
+        border-radius: 100%;
+    }
+}
+
+.editOption {
+    color: blue;
+    cursor: pointer;
+
+    &:hover {
+        color: brown;
+    }
+}
+
+.deleteOption {
+    color: red;
+    cursor: pointer;
+}
+
+.taskCard {
+    animation: fadeIn 2s;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    width: 43rem;
+    margin: 0.625rem 0 0.625rem 0.938rem;
+
+    .taskCheckBoxStatus {
+        margin-left: 2.5rem;
+    }
+}
+
+.row {
+    .noTaskAvailable {
+        background-color: lightslategrey;
+        color: white;
+        text-align: center;
+        width: 19.375rem;
+        margin: 9.375rem 0 0 14.063rem;
+    }
+
+    .addTaskButton {
+        margin: 0.625rem 0 0 20.625rem;
+    }
+
+    .addTaskOption {
+        color: green;
+        cursor: pointer;
+    }
+}

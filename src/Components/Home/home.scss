@@ -1,0 +1,91 @@
+.container {
+    margin-bottom: 1.2%;
+
+    .addList {
+        float: right;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 170%;
+        text-align: center;
+        margin-top: 2%;;
+    }
+
+    .homeLeftGrid {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 20.625rem;
+        border: 1px solid black;
+        border-radius: 0 1.25rem;
+        background-color: lightblue;
+    }
+
+    .homeRightGrid {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 20.625rem;
+        border: 1px solid black;
+        border-radius: 0 1.25rem;
+        background-color: lightblue;
+    }
+
+    .listsHeading {
+        color: white;
+        font-weight: bolder;
+        margin: 0.625rem 0 0 0;
+        background-color: lightseagreen;
+        height: 2.813rem;
+        font-size: 1.25rem;
+        padding-top: 0.313rem;
+        border-radius: 1.25rem 1.25rem 0 0;
+
+        .listsHeading {
+            margin-left: 2.813rem;
+        }
+
+        .actionsListsHeading {
+            margin-left: 9.063rem;
+        }
+    }
+
+    .tasksMainHeading {
+        .completedHeading {
+            margin-left: 1.25rem;
+        }
+
+        .taskHeading {
+            margin-left: 4.375rem;
+        }
+
+        .priorityHeading {
+            margin-left: 9.688rem;
+        }
+
+        .actionsTasksHeading {
+            margin-left: 8.125rem;
+        }
+
+        color: white;
+        font-weight: bolder;
+        margin: 0.625rem 0 0 0;
+        background-color: lightseagreen;
+        height: 2.813rem;
+        font-size: 1.25rem;
+        padding-top: 0.313rem;
+        border-radius: 1.25rem 1.25rem 0 0;
+    }
+
+    .addListButton {
+        background-color: lightseagreen;
+        color: white;
+    }
+
+    .completedTasksButton {
+        float: right;
+    }
+
+    .btn-primary {
+        background-color: lightseagreen !important;
+    }
+}

@@ -1,0 +1,29 @@
+.addTaskHeader {
+    background-color: lightseagreen;
+    display: grid !important;
+    grid-template-columns: 90% 10%;
+    text-align: center;
+    padding: 0 0.625rem;
+
+    .addTaskHeading {
+        color: white;
+    }
+
+}
+
+.priorityField {
+    margin-top: 0.313rem !important;
+}
+
+.nameLabel,
+.priorityLabel {
+    float: right;
+}
+
+.taskNameInputBox {
+    width: 130%;
+}
+
+.modal-footer-addTask {
+    background-color: powderblue !important;
+}

@@ -1,0 +1,76 @@
+.container {
+  margin-bottom: 1.2%;
+}
+.container .addList {
+  float: right;
+}
+.container .title {
+  font-weight: bold;
+  font-size: 170%;
+  text-align: center;
+  margin-top: 2%;
+}
+.container .homeLeftGrid {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 20.625rem;
+  border: 1px solid black;
+  border-radius: 0 1.25rem;
+  background-color: lightblue;
+}
+.container .homeRightGrid {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 20.625rem;
+  border: 1px solid black;
+  border-radius: 0 1.25rem;
+  background-color: lightblue;
+}
+.container .listsHeading {
+  color: white;
+  font-weight: bolder;
+  margin: 0.625rem 0 0 0;
+  background-color: lightseagreen;
+  height: 2.813rem;
+  font-size: 1.25rem;
+  padding-top: 0.313rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+.container .listsHeading .listsHeading {
+  margin-left: 2.813rem;
+}
+.container .listsHeading .actionsListsHeading {
+  margin-left: 9.063rem;
+}
+.container .tasksMainHeading {
+  color: white;
+  font-weight: bolder;
+  margin: 0.625rem 0 0 0;
+  background-color: lightseagreen;
+  height: 2.813rem;
+  font-size: 1.25rem;
+  padding-top: 0.313rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+.container .tasksMainHeading .completedHeading {
+  margin-left: 1.25rem;
+}
+.container .tasksMainHeading .taskHeading {
+  margin-left: 4.375rem;
+}
+.container .tasksMainHeading .priorityHeading {
+  margin-left: 9.688rem;
+}
+.container .tasksMainHeading .actionsTasksHeading {
+  margin-left: 8.125rem;
+}
+.container .addListButton {
+  background-color: lightseagreen;
+  color: white;
+}
+.container .completedTasksButton {
+  float: right;
+}
+.container .btn-primary {
+  background-color: lightseagreen !important;
+}/*# sourceMappingURL=home.css.map */

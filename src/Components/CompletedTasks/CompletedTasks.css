@@ -1,0 +1,60 @@
+.submitTasksHeading {
+  color: white;
+  text-align: center;
+}
+
+.completedTasksButton {
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+
+.submittedTasksBody {
+  overflow-y: scroll;
+  height: 22.188rem;
+  background-color: aliceblue;
+}
+
+.taskCardSubmitted {
+  margin-bottom: 0.625rem;
+}
+
+.completedTasksHeader {
+  background-color: lightseagreen;
+  display: grid !important;
+  grid-template-columns: 90% 10%;
+  text-align: center;
+  padding: 0 0.625rem;
+}
+.completedTasksHeader .completedTasksHeading {
+  color: white;
+}
+
+.noTasksSubmitted {
+  align-items: center;
+  background-color: lightslategrey !important;
+  color: white !important;
+  text-align: center;
+  width: 25rem !important;
+  margin: auto;
+  margin-top: 25% !important;
+}
+
+.submitTasksMainHeading {
+  color: white;
+  font-weight: bolder;
+  margin: 0;
+  font-size: 80%;
+}
+.submitTasksMainHeading .submittedTaskHeading {
+  margin-left: 5%;
+}
+.submitTasksMainHeading .submittedPriorityHeading {
+  margin-left: 33%;
+}
+.submitTasksMainHeading .submittedTasksActions {
+  margin-left: 20%;
+}
+
+.modal-footerCompletedTasks {
+  background-color: paleturquoise !important;
+}/*# sourceMappingURL=CompletedTasks.css.map */

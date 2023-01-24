@@ -1,0 +1,11 @@
+.deleteModel .modal-content {
+  width: 55%;
+  margin: 35%;
+}
+.deleteModel .modalBody {
+  background-color: lightpink;
+  border-radius: 0.313rem 0.313rem 0 0;
+}
+.deleteModel .modal-footer {
+  background-color: paleturquoise;
+}/*# sourceMappingURL=DeletePopup.css.map */
