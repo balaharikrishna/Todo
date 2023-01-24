@@ -32,6 +32,13 @@ const Task = ({
     listId = localData && localData[0] ? localData[0].id : 0;
   }
 
+  useEffect(()=>{
+    localData = JSON.parse(localStorage.getItem("tododata"));
+    if(localData == null || localData == undefined){
+      setListName("");
+    }
+  },[listsUpdated])
+
   useEffect(() => {
     if (listId == 0 || listId == undefined || listId == "") {
       listId = localData ? localData[0].id : 0;

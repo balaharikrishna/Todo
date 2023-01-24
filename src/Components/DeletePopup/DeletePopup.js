@@ -48,6 +48,11 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
     doTasksUpdated(Math.random());
     changeShowDelete();
   }
+
+  const clearDeleteTaskId=()=>{
+    getDeleteTaskId(0);
+    changeShowDelete();
+  }
  
 
   const notify = (note) => {
@@ -65,7 +70,7 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
   }
 
   return(<div className="container">
-  <Modal show={showDelete} onHide={changeShowDelete} className="deleteModel">
+  <Modal show={showDelete} onHide={clearDeleteTaskId} className="deleteModel">
     <form >
       <Modal.Body className="modalBody">
         <div className="row">
@@ -75,7 +80,7 @@ const DeletePopup = ({showDelete,changeShowDelete,deleteListId,deleteTaskId,list
         </div>
       </Modal.Body>
       <Modal.Footer className="modal-footer">
-        <Button variant="secondary" onClick={changeShowDelete} >
+        <Button variant="secondary" onClick={clearDeleteTaskId} >
         <i class="fa fa-times" aria-hidden="true"></i> Close
         </Button>
         <Button variant="danger" type="submit" onClick={ listId > 0  && deleteTaskId > 0 ? deleteTask : deleteList } >

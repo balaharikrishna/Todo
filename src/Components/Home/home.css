@@ -1,5 +1,5 @@
 .container {
-  margin-bottom: 1%;
+  margin-bottom: 1.2%;
 }
 .container .addList {
   float: right;
@@ -8,7 +8,7 @@
   font-weight: bold;
   font-size: 170%;
   text-align: center;
-  margin-top: 2.5%;
+  margin-top: 2%;
 }
 .container .homeLeftGrid {
   overflow-y: scroll;
@@ -21,7 +21,7 @@
 .container .homeRightGrid {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 330px;
+  height: 20.625rem;
   border: 1px solid black;
   border-radius: 0 1.25rem;
   background-color: lightblue;
