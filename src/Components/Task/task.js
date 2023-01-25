@@ -5,10 +5,10 @@ import * as React from "react";
 import "./Task.scss";
 
 const Task = ({
+  setEnableTaskBtn,
   changeShowStateTask,
   listId,
   getEditTaskId,
-  clearTaskFields,
   changeShowDeleteTask,
   getDeleteTaskId,
   listsUpdated,
@@ -130,6 +130,16 @@ const Task = ({
     if (a.priority > b.priority) return 1;
     return 0;
   }
+  if(localData && listId > 0 &&
+    localData[listIndex] &&
+    localData[localData.findIndex((x) => x.id == listId)]?.tasks.length > 0 &&
+    taskData.length != 0)
+  {
+    setEnableTaskBtn(true);
+  }
+  else{
+    setEnableTaskBtn(false);
+  }
 
   return (
     <div>
@@ -185,15 +195,6 @@ const Task = ({
               </div>
             );
           })}
-          <div className="addMoreTasks">
-          <button
-              type="button"
-              className="btn btn-primary addTaskFloatingButton"
-              onClick={clearTaskFields}
-            >
-              <i className="fa fa-plus" aria-hidden="true"></i>
-            </button>
-            </div>
         </div>
       ) : (
         <div>
