@@ -1,17 +1,8 @@
-.addMoreTasks {
-    position: absolute;
-    top: 31.575rem;
-    right: 3.875rem;
 
-    .addTaskFloatingButton {
-        border-radius: 100%;
-    }
-}
 
 .editOption {
     color: blue;
     cursor: pointer;
-
     &:hover {
         color: brown;
     }

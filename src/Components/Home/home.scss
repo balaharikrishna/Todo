@@ -1,5 +1,17 @@
+.twoGrids{
+    position: relative;
+}
+
+.addMoreTasks {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 1.5rem;
+    .addTaskFloatingButton {
+        border-radius: 100%;
+    }
+}
+
 .container {
-    margin-bottom: 1.2%;
 
     .addList {
         float: right;

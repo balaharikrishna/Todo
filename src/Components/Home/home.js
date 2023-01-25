@@ -20,6 +20,7 @@ const Home = () => {
   const [listsUpdated, setListsUpdated] = useState(0);
   const [tasksUpdated, setTasksUpdated] = useState(0);
   const [showSubmittedTasks, setshowSubmittedTasks] = useState(false);
+  const [enableTaskBtn,setEnableTaskBtn]=useState(false);
 
   //Lists//
 
@@ -158,7 +159,7 @@ const Home = () => {
           listsUpdated={listsUpdated}
         />
         <ToastContainer />
-        <div className="col-12">
+        <div className="col-12 twoGrids">
           <div className="row">
             <div className="col-4  ">
               <p className="listsHeading">
@@ -185,6 +186,7 @@ const Home = () => {
               </p>
               <div className="homeRightGrid">
                 <Task
+                  setEnableTaskBtn={setEnableTaskBtn}
                   changeShowStateTask={changeShowStateTask}
                   listId={listId}
                   getEditTaskId={getEditTaskId}
@@ -196,6 +198,17 @@ const Home = () => {
                   doTasksUpdated={doTasksUpdated}
                 />
               </div>
+              { enableTaskBtn &&
+                <div className="addMoreTasks">
+                  <button
+                    type="button"
+                    className="btn btn-primary addTaskFloatingButton"
+                    onClick={clearTaskFields}
+                  >
+                    <i className="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              }
             </div>
           </div>
         </div>
