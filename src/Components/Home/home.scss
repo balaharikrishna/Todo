@@ -1,11 +1,12 @@
-.twoGrids{
+.twoGrids {
     position: relative;
 }
 
 .addMoreTasks {
     position: absolute;
     bottom: 0.25rem;
-    right: 1.5rem;
+    right: 1rem;
+
     .addTaskFloatingButton {
         border-radius: 100%;
     }
@@ -21,26 +22,52 @@
         font-weight: bold;
         font-size: 170%;
         text-align: center;
-        margin-top: 2%;;
+        margin-top: 2%;
+        ;
     }
 
     .homeLeftGrid {
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
         height: 20.625rem;
-        border: 1px solid black;
-        border-radius: 0 1.25rem;
+        border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
     }
 
     .homeRightGrid {
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
         height: 20.625rem;
-        border: 1px solid black;
-        border-radius: 0 1.25rem;
+        border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
     }
+
+    #homeRightGrid::-webkit-scrollbar-track {
+        background-color: lightblue;
+    }
+
+    #homeRightGrid::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    #homeRightGrid::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: lightseagreen;
+    }
+
+    #homeLeftGrid::-webkit-scrollbar-track {
+        background-color: lightblue;
+    }
+
+    #homeLeftGrid::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    #homeLeftGrid::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: lightseagreen;
+    }
+
 
     .listsHeading {
         color: white;

@@ -5,7 +5,7 @@
 .addMoreTasks {
   position: absolute;
   bottom: 0.25rem;
-  right: 1.5rem;
+  right: 1rem;
 }
 .addMoreTasks .addTaskFloatingButton {
   border-radius: 100%;
@@ -21,20 +21,38 @@
   margin-top: 2%;
 }
 .container .homeLeftGrid {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 20.625rem;
-  border: 1px solid black;
-  border-radius: 0 1.25rem;
+  border-radius: 0 0 0.8rem 0.8rem;
   background-color: lightblue;
 }
 .container .homeRightGrid {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 20.625rem;
-  border: 1px solid black;
-  border-radius: 0 1.25rem;
+  border-radius: 0 0 0.8rem 0.8rem;
   background-color: lightblue;
+}
+.container #homeRightGrid::-webkit-scrollbar-track {
+  background-color: lightblue;
+}
+.container #homeRightGrid::-webkit-scrollbar {
+  width: 12px;
+}
+.container #homeRightGrid::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightseagreen;
+}
+.container #homeLeftGrid::-webkit-scrollbar-track {
+  background-color: lightblue;
+}
+.container #homeLeftGrid::-webkit-scrollbar {
+  width: 12px;
+}
+.container #homeLeftGrid::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightseagreen;
 }
 .container .listsHeading {
   color: white;

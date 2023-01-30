@@ -87,7 +87,7 @@ const CompletedTasks = ({listId ,showSubmittedTasks, changeShowSubmittedTasks,do
             )}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="submittedTasksBody">
+        <Modal.Body className="submittedTasksBody" id="submittedTasksBody">
           <div>
             {listId > 0 &&
             localData &&

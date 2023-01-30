@@ -9,9 +9,22 @@
 }
 
 .submittedTasksBody {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 22.188rem;
     background-color: aliceblue
+}
+
+#submittedTasksBody::-webkit-scrollbar-track {
+    background-color: aliceblue;
+}
+
+#submittedTasksBody::-webkit-scrollbar {
+    width: 12px;
+}
+
+#submittedTasksBody::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: lightseagreen;
 }
 
 .taskCardSubmitted {

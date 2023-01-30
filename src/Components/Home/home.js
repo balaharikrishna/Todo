@@ -166,7 +166,7 @@ const Home = () => {
                 <span className="listsHeading">Lists</span>
                 <span className="actionsListsHeading">Actions</span>
               </p>
-              <div className=" mr-2 homeLeftGrid">
+              <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
                 <List
                   show={show}
                   changeShowState={changeShowState}
@@ -184,7 +184,7 @@ const Home = () => {
                 <span className="priorityHeading">Priority</span>
                 <span className="actionsTasksHeading">Actions</span>
               </p>
-              <div className="homeRightGrid">
+              <div className="homeRightGrid" id="homeRightGrid">
                 <Task
                   setEnableTaskBtn={setEnableTaskBtn}
                   changeShowStateTask={changeShowStateTask}

@@ -14,7 +14,7 @@
 .taskCard {
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
-  width: 43rem;
+  width: 44rem;
   margin: 0.625rem 0 0.625rem 0.938rem;
 }
 @-webkit-keyframes fadeIn {

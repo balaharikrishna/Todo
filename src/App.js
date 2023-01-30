@@ -4,7 +4,7 @@ import Home from "./Components/Home/home"
 
 function App() {
   return (
-    <BrowserRouter> 
+    <BrowserRouter basename='/Todo'> 
       <Routes>
         <Route path="/" element={<Home />}></Route>
       </Routes>
