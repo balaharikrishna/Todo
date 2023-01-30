@@ -88,7 +88,7 @@ const Home = () => {
             <p>
               Todo List
               <img
-                src="images/todoimage.png"
+                src="Todo/images/todoimage.webp"
                 alt="todapp image"
                 width="70px"
                 height="70px"
@@ -166,7 +166,7 @@ const Home = () => {
                 <span className="listsHeading">Lists</span>
                 <span className="actionsListsHeading">Actions</span>
               </p>
-              <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
+              <div className=" mr-2 homeLeftGrid" id="homeRightGrid">
                 <List
                   show={show}
                   changeShowState={changeShowState}
@@ -184,7 +184,7 @@ const Home = () => {
                 <span className="priorityHeading">Priority</span>
                 <span className="actionsTasksHeading">Actions</span>
               </p>
-              <div className="homeRightGrid" id="homeRightGrid">
+              <div className="homeRightGrid">
                 <Task
                   setEnableTaskBtn={setEnableTaskBtn}
                   changeShowStateTask={changeShowStateTask}
