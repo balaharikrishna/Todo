@@ -88,7 +88,7 @@ const Home = () => {
             <p>
               Todo List
               <img
-                src="images/todoimage.png"
+                src="images/todoimage.webp"
                 alt="todapp image"
                 width="70px"
                 height="70px"
@@ -96,15 +96,19 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <button
-              type="button"
-              className="btn btn-primary addListButton"
-              onClick={clearAllFields}
-            >
-              <i className="fa fa-plus" aria-hidden="true">
-                &nbsp;Add List
-              </i>
-            </button>
+            {listId === 0 ? (
+              ""
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary addListButton"
+                onClick={clearAllFields}
+              >
+                <i className="fa fa-plus" aria-hidden="true">
+                  &nbsp;Add List
+                </i>
+              </button>
+            )}
 
             {localStorage.getItem("tododata") && listId >= 0 ? (
               <button
@@ -161,55 +165,76 @@ const Home = () => {
         <ToastContainer />
         <div className="col-12 twoGrids">
           <div className="row">
-            <div className="col-4  ">
-              <p className="listsHeading">
-                <span className="listsHeading">Lists</span>
-                <span className="actionsListsHeading">Actions</span>
-              </p>
-              <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
-                <List
-                  show={show}
-                  changeShowState={changeShowState}
-                  getEditListId={getEditListId}
-                  getListId={getListId}
-                  changeShowDelete={changeShowDelete}
-                  listsUpdated={listsUpdated}
-                />
-              </div>
-            </div>
-            <div className="col-8">
-              <p className="tasksMainHeading">
-                <span className="completedHeading">Completed?</span>
-                <span className="taskHeading">Tasks</span>
-                <span className="priorityHeading">Priority</span>
-                <span className="actionsTasksHeading">Actions</span>
-              </p>
-              <div className="homeRightGrid" id="homeRightGrid">
-                <Task
-                  setEnableTaskBtn={setEnableTaskBtn}
-                  changeShowStateTask={changeShowStateTask}
-                  listId={listId}
-                  getEditTaskId={getEditTaskId}
-                  clearTaskFields={clearTaskFields}
-                  tasksUpdated={tasksUpdated}
-                  changeShowDeleteTask={changeShowDeleteTask}
-                  getDeleteTaskId={getDeleteTaskId}
-                  listsUpdated={listsUpdated}
-                  doTasksUpdated={doTasksUpdated}
-                />
-              </div>
-              { enableTaskBtn &&
-                <div className="addMoreTasks">
-                  <button
-                    type="button"
-                    className="btn btn-primary addTaskFloatingButton"
-                    onClick={clearTaskFields}
-                  >
-                    <i className="fa fa-plus" aria-hidden="true"></i>
-                  </button>
+            {listId === 0 ? (
+              <div className="col-4 noListAvailable">
+                <p className="listsHeading">
+                  <span className="listsHeadingWithoutLists">Welcome</span>
+                </p>
+                <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
+                  <List
+                    show={show}
+                    changeShowState={changeShowState}
+                    getEditListId={getEditListId}
+                    getListId={getListId}
+                    changeShowDelete={changeShowDelete}
+                    listsUpdated={listsUpdated}
+                    clearAllFields={clearAllFields}
+                  />
                 </div>
-              }
-            </div>
+              </div>
+            ) : (
+              <>
+                <div className="col-4 ">
+                  <p className="listsHeading">
+                    <span className="listsHeading">Lists</span>
+                    <span className="actionsListsHeading">Actions</span>
+                  </p>
+                  <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
+                    <List
+                      show={show}
+                      changeShowState={changeShowState}
+                      getEditListId={getEditListId}
+                      getListId={getListId}
+                      changeShowDelete={changeShowDelete}
+                      listsUpdated={listsUpdated}
+                    />
+                  </div>
+                </div>
+                <div className="col-8">
+                  <p className="tasksMainHeading">
+                    <span className="completedHeading">Completed?</span>
+                    <span className="taskHeading">Tasks</span>
+                    <span className="priorityHeading">Priority</span>
+                    <span className="actionsTasksHeading">Actions</span>
+                  </p>
+                  <div className="homeRightGrid" id="homeRightGrid">
+                    <Task
+                      setEnableTaskBtn={setEnableTaskBtn}
+                      changeShowStateTask={changeShowStateTask}
+                      listId={listId}
+                      getEditTaskId={getEditTaskId}
+                      clearTaskFields={clearTaskFields}
+                      tasksUpdated={tasksUpdated}
+                      changeShowDeleteTask={changeShowDeleteTask}
+                      getDeleteTaskId={getDeleteTaskId}
+                      listsUpdated={listsUpdated}
+                      doTasksUpdated={doTasksUpdated}
+                    />
+                  </div>
+                  {enableTaskBtn && (
+                    <div className="addMoreTasks">
+                      <button
+                        type="button"
+                        className="btn btn-primary addTaskFloatingButton"
+                        onClick={clearTaskFields}
+                      >
+                        <i className="fa fa-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

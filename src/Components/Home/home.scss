@@ -1,7 +1,3 @@
-.twoGrids {
-    position: relative;
-}
-
 .addMoreTasks {
     position: absolute;
     bottom: 0.25rem;
@@ -13,6 +9,14 @@
 }
 
 .container {
+
+    .twoGrids {
+        position: relative;
+
+        .noListAvailable {
+            margin-left: 33%;
+        }
+    }
 
     .addList {
         float: right;
@@ -85,6 +89,10 @@
 
         .actionsListsHeading {
             margin-left: 9.063rem;
+        }
+
+        .listsHeadingWithoutLists {
+            margin-left: 38%;
         }
     }
 
