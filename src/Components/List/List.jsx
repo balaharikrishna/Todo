@@ -1,7 +1,7 @@
 import './List.scss';
 import { useEffect, useState } from 'react';
 
-const List = ({show,changeShowState,getEditListId,getListId,changeShowDelete,listsUpdated}) => {
+const List = ({show,changeShowState,getEditListId,getListId,changeShowDelete,listsUpdated,clearAllFields}) => {
  const [activeList,setActiveList] = useState();
  let localData = JSON.parse(localStorage.getItem("tododata"));
 useEffect(() => {
@@ -76,6 +76,17 @@ useEffect(() => {
               <div className="col-12 alert noListsAvailable" role="alert">
                 No Lists Available....
               </div>
+            </div>
+            <div className="col-12">
+              <button
+                type="button"
+                className="btn btn-primary addListButtonWithNoLists"
+                onClick={clearAllFields}
+              >
+                <i className="fa fa-plus" aria-hidden="true">
+                  &nbsp;Add List
+                </i>
+              </button>
             </div>
           </div>
         </div>
