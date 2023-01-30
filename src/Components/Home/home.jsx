@@ -6,7 +6,7 @@ import List from '../List/List';
 import AddTask from '../AddTask/AddTask';
 import DeletePopup from '../DeletePopup/DeletePopup';
 import { ToastContainer } from 'react-toastify';
-import CompletedTasks from '../CompletedTasks/CompletedTasks.js';
+import CompletedTasks from '../CompletedTasks/CompletedTasks.jsx';
 
 const Home = () => {
   const [show, setShow] = useState(false);
