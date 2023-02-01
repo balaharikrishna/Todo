@@ -13,8 +13,9 @@
         }
 
         cursor: pointer;
-        width: 20rem;
-        margin: 0.625rem 0 0.625rem 0.938rem;
+        // width: 20rem;
+        width: auto;
+        margin: 0.625rem 0.938rem 0.625rem 0.938rem;
 
         .editOption {
             color: blue;
@@ -32,12 +33,15 @@
         color: white;
         text-align: center;
         width: 13.063rem !important;
-        margin: 7.375rem 0 0 4.75rem;
+       // margin: 7.375rem 0 0 4.75rem;
+        margin: 5vh auto auto auto;
+      
     }
 
     .addListButtonWithNoLists {
         background-color: lightseagreen;
         color: white;
-        margin: 3.375rem 0 0 8rem;
+        margin: 5% 0 5% 0;
+       // align-items: center;
     }
 }

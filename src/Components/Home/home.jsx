@@ -163,13 +163,11 @@ const Home = () => {
           listsUpdated={listsUpdated}
         />
         <ToastContainer />
-        <div className="col-12 twoGrids">
+        <div className="col-12  twoGrids">
           <div className="row">
             {listId === 0 ? (
-              <div className="col-4 noListAvailable">
-                <p className="listsHeading">
-                  <span className="listsHeadingWithoutLists">Welcome</span>
-                </p>
+              <div className="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5 noListAvailable">
+                <p className="listsHeading listsHeadingWithoutLists">Welcome</p>
                 <div className=" mr-2 homeLeftGrid" id="homeLeftGrid">
                   <List
                     show={show}
@@ -184,7 +182,7 @@ const Home = () => {
               </div>
             ) : (
               <>
-                <div className="col-4 ">
+                <div className=" col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                   <p className="listsHeading">
                     <span className="listsHeading">Lists</span>
                     <span className="actionsListsHeading">Actions</span>
@@ -200,9 +198,9 @@ const Home = () => {
                     />
                   </div>
                 </div>
-                <div className="col-8">
+                <div className=" col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
                   <p className="tasksMainHeading">
-                    <span className="completedHeading">Completed?</span>
+                    <span className="completedHeading">Done?</span>
                     <span className="taskHeading">Tasks</span>
                     <span className="priorityHeading">Priority</span>
                     <span className="actionsTasksHeading">Actions</span>

@@ -1,6 +1,6 @@
 .addMoreTasks {
     position: absolute;
-    bottom: 0.25rem;
+    bottom: 1rem;
     right: 1rem;
 
     .addTaskFloatingButton {
@@ -10,11 +10,12 @@
 
 .container {
 
+     height: auto;
     .twoGrids {
         position: relative;
 
         .noListAvailable {
-            margin-left: 33%;
+           margin: auto;
         }
     }
 
@@ -27,15 +28,29 @@
         font-size: 170%;
         text-align: center;
         margin-top: 2%;
-        ;
+        
     }
 
     .homeLeftGrid {
         overflow-y: auto;
         overflow-x: hidden;
-        height: 20.625rem;
         border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
+        @media only screen and (min-height: 1080px) and (min-width:1400px){
+            height: 50.625rem;
+          }
+        @media only screen and (min-height: 900px) and (max-height:1080px) and (min-width:1400px) {
+            height: 40.625rem;
+          }
+        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
+          height: 32.625rem;
+        }
+        @media only screen and (min-width: 576px)and (max-height: 768px) {
+            height: 20.625rem;
+          }
+          @media only screen and (max-width: 576px) {
+            height: 20.625rem;
+          }
     }
 
     .homeRightGrid {
@@ -44,6 +59,22 @@
         height: 20.625rem;
         border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
+        @media only screen and (min-height: 1080px) and (min-width:1400px){
+            height: 50.625rem;
+          }
+        @media only screen and (min-height: 900px) and (max-height:1080px) and (min-width:1400px) {
+            height: 40.625rem;
+          }
+        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
+          height: 32.625rem;
+        }
+        @media only screen and (min-width: 576px)and (max-height: 768px) {
+            height: 20.625rem;
+          }
+          @media only screen and (max-width: 576px) {
+            height: 20.625rem;
+          }
+        
     }
 
     #homeRightGrid::-webkit-scrollbar-track {
@@ -79,47 +110,165 @@
         margin: 0.625rem 0 0 0;
         background-color: lightseagreen;
         height: 2.813rem;
-        font-size: 1.25rem;
-        padding-top: 0.313rem;
+        font-size: 1rem;
+        padding-top: 2%;
         border-radius: 1.25rem 1.25rem 0 0;
 
         .listsHeading {
-            margin-left: 2.813rem;
+            margin-left: 8%;
         }
 
         .actionsListsHeading {
-            margin-left: 9.063rem;
-        }
-
-        .listsHeadingWithoutLists {
-            margin-left: 38%;
+            float: right;
+            margin-right: 17%;
         }
     }
 
+    .listsHeadingWithoutLists {
+        text-align: center !important;
+    }
+
     .tasksMainHeading {
-        .completedHeading {
-            margin-left: 1.25rem;
+        @media only screen and (min-width: 1400px) {
+            .completedHeading {
+                margin-left: 4%;
+            }
+    
+            .taskHeading {
+                margin-left: 11%;
+            }
+    
+            .priorityHeading {
+                margin-left: 24%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 15%;
+            }
+    
         }
-
-        .taskHeading {
-            margin-left: 4.375rem;
+        @media only screen and (min-width: 992px) and (max-width:1400px) {
+            .completedHeading {
+                margin-left: 4%;
+            }
+    
+            .taskHeading {
+                margin-left: 11%;
+            }
+    
+            .priorityHeading {
+                margin-left: 22%;
+            }
+    
+            .actionsTasksHeading {
+                margin-left: 18%;
+            }
+    
         }
-
-        .priorityHeading {
-            margin-left: 9.688rem;
+        @media only screen and (min-width: 768px) and (max-width:992px) {
+            .completedHeading {
+                margin-left: 4%;
+            }
+    
+            .taskHeading {
+                margin-left: 11%;
+            }
+    
+            .priorityHeading {
+                margin-left: 22%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 15%;
+            }
+    
         }
-
-        .actionsTasksHeading {
-            margin-left: 8.125rem;
+        @media only screen and (min-width:576px) and (max-width:768px) {
+            .completedHeading {
+                margin-left: 4%;
+            }
+    
+            .taskHeading {
+                margin-left: 11%;
+            }
+    
+            .priorityHeading {
+                margin-left: 17%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 13%;
+            }
+    
         }
-
+        @media only screen and (min-width:460px) and (max-width:576px){
+            .completedHeading {
+                margin-left: 4%;
+            }
+    
+            .taskHeading {
+                margin-left: 11%;
+            }
+    
+            .priorityHeading {
+                margin-left: 25%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 13%;
+            }
+    
+        }
+        @media only screen and (min-width:320px) and (max-width:460px){
+            .completedHeading {
+                margin-left: 2%;
+            }
+    
+            .taskHeading {
+                margin-left: 7%;
+            }
+    
+            .priorityHeading {
+                margin-left: 18%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 2%;
+            }
+    
+        }
+        @media only screen and (max-width:320px){
+            .completedHeading {
+                margin-left: 2%;
+            }
+    
+            .taskHeading {
+                margin-left: 7%;
+            }
+    
+            .priorityHeading {
+                margin-left: 7%;
+            }
+    
+            .actionsTasksHeading {
+                float: right;
+                margin-right: 2%;
+            }
+    
+        }
+        
         color: white;
         font-weight: bolder;
         margin: 0.625rem 0 0 0;
         background-color: lightseagreen;
         height: 2.813rem;
-        font-size: 1.25rem;
-        padding-top: 0.313rem;
+        font-size: 1rem;
+        padding-top: 2%;
         border-radius: 1.25rem 1.25rem 0 0;
     }
 

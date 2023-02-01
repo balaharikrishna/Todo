@@ -51,25 +51,21 @@
     width: 25rem !important;
     margin: auto;
     margin-top: 25% !important;
-
 }
 
 .submitTasksMainHeading {
-    .submittedTaskHeading {
-        margin-left: 5%;
-    }
-
+    
     .submittedPriorityHeading {
-        margin-left: 33%;
+        float: right;
     }
 
     .submittedTasksActions {
-        margin-left: 20%;
+       float: right;
     }
+    
 
     color: white;
     font-weight: bolder;
-    margin: 0;
     font-size: 80%;
 }
 .modal-footerCompletedTasks{

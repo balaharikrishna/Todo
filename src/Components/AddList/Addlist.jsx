@@ -70,7 +70,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
   }
   
   return (
-    <div className="container">
+    <div className="container col-10 col-xs-10 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
       <Modal show={show} onHide={changeShowState}>
         <form onSubmit={editListId > 0 ? updateList : addList}>
           <Modal.Header closeButton className="addListHeader">

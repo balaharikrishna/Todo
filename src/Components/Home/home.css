@@ -1,16 +1,21 @@
-.twoGrids {
-  position: relative;
-}
-
 .addMoreTasks {
   position: absolute;
-  bottom: 0.25rem;
+  bottom: 1rem;
   right: 1rem;
 }
 .addMoreTasks .addTaskFloatingButton {
   border-radius: 100%;
 }
 
+.container {
+  height: auto;
+}
+.container .twoGrids {
+  position: relative;
+}
+.container .twoGrids .noListAvailable {
+  margin: auto;
+}
 .container .addList {
   float: right;
 }
@@ -23,9 +28,33 @@
 .container .homeLeftGrid {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 20.625rem;
   border-radius: 0 0 0.8rem 0.8rem;
   background-color: lightblue;
+}
+@media only screen and (min-height: 1080px) and (min-width: 1400px) {
+  .container .homeLeftGrid {
+    height: 50.625rem;
+  }
+}
+@media only screen and (min-height: 900px) and (max-height: 1080px) and (min-width: 1400px) {
+  .container .homeLeftGrid {
+    height: 40.625rem;
+  }
+}
+@media only screen and (min-height: 768px) and (min-width: 992px) and (max-height: 900px) {
+  .container .homeLeftGrid {
+    height: 32.625rem;
+  }
+}
+@media only screen and (min-width: 576px) and (max-height: 768px) {
+  .container .homeLeftGrid {
+    height: 20.625rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container .homeLeftGrid {
+    height: 20.625rem;
+  }
 }
 .container .homeRightGrid {
   overflow-y: auto;
@@ -33,6 +62,31 @@
   height: 20.625rem;
   border-radius: 0 0 0.8rem 0.8rem;
   background-color: lightblue;
+}
+@media only screen and (min-height: 1080px) and (min-width: 1400px) {
+  .container .homeRightGrid {
+    height: 50.625rem;
+  }
+}
+@media only screen and (min-height: 900px) and (max-height: 1080px) and (min-width: 1400px) {
+  .container .homeRightGrid {
+    height: 40.625rem;
+  }
+}
+@media only screen and (min-height: 768px) and (min-width: 992px) and (max-height: 900px) {
+  .container .homeRightGrid {
+    height: 32.625rem;
+  }
+}
+@media only screen and (min-width: 576px) and (max-height: 768px) {
+  .container .homeRightGrid {
+    height: 20.625rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container .homeRightGrid {
+    height: 20.625rem;
+  }
 }
 .container #homeRightGrid::-webkit-scrollbar-track {
   background-color: lightblue;
@@ -60,15 +114,19 @@
   margin: 0.625rem 0 0 0;
   background-color: lightseagreen;
   height: 2.813rem;
-  font-size: 1.25rem;
-  padding-top: 0.313rem;
+  font-size: 1rem;
+  padding-top: 2%;
   border-radius: 1.25rem 1.25rem 0 0;
 }
 .container .listsHeading .listsHeading {
-  margin-left: 2.813rem;
+  margin-left: 8%;
 }
 .container .listsHeading .actionsListsHeading {
-  margin-left: 9.063rem;
+  float: right;
+  margin-right: 17%;
+}
+.container .listsHeadingWithoutLists {
+  text-align: center !important;
 }
 .container .tasksMainHeading {
   color: white;
@@ -76,21 +134,113 @@
   margin: 0.625rem 0 0 0;
   background-color: lightseagreen;
   height: 2.813rem;
-  font-size: 1.25rem;
-  padding-top: 0.313rem;
+  font-size: 1rem;
+  padding-top: 2%;
   border-radius: 1.25rem 1.25rem 0 0;
 }
-.container .tasksMainHeading .completedHeading {
-  margin-left: 1.25rem;
+@media only screen and (min-width: 1400px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 4%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 11%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 24%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 15%;
+  }
 }
-.container .tasksMainHeading .taskHeading {
-  margin-left: 4.375rem;
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 4%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 11%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 22%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    margin-left: 18%;
+  }
 }
-.container .tasksMainHeading .priorityHeading {
-  margin-left: 9.688rem;
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 4%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 11%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 22%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 15%;
+  }
 }
-.container .tasksMainHeading .actionsTasksHeading {
-  margin-left: 8.125rem;
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 4%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 11%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 17%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 13%;
+  }
+}
+@media only screen and (min-width: 460px) and (max-width: 576px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 4%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 11%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 25%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 13%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 460px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 2%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 7%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 18%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 2%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container .tasksMainHeading .completedHeading {
+    margin-left: 2%;
+  }
+  .container .tasksMainHeading .taskHeading {
+    margin-left: 7%;
+  }
+  .container .tasksMainHeading .priorityHeading {
+    margin-left: 7%;
+  }
+  .container .tasksMainHeading .actionsTasksHeading {
+    float: right;
+    margin-right: 2%;
+  }
 }
 .container .addListButton {
   background-color: lightseagreen;

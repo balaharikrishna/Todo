@@ -42,10 +42,10 @@ useEffect(() => {
               >
                 <div className="card-body listCardBody">
                   <div className="row">
-                    <div className="col-8">
+                    <div className="col-8 col-sm-8 col-md-9 col-lg-8 col-xl-8 col-xxl-8">
                       <p className="card-title">{x.listName}</p>
                     </div>
-                    <div className="col-4">
+                    <div className="col-4 col-sm-4 col-md-3 col-lg-4 col-xl-4 col-xxl-4">
                       <div className="row">
                         <div className="col-6">
                           <i
@@ -77,7 +77,7 @@ useEffect(() => {
                 No Lists Available....
               </div>
             </div>
-            <div className="col-12">
+            <div className="col-12 text-center">
               <button
                 type="button"
                 className="btn btn-primary addListButtonWithNoLists"

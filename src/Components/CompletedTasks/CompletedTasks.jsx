@@ -78,9 +78,17 @@ const CompletedTasks = ({listId ,showSubmittedTasks, changeShowSubmittedTasks,do
           <Modal.Title className="completedTasksHeading">
             {finishedTasks?.length > 0 ? (
               <p className="submitTasksMainHeading">
+                <div className="row">
+                <div className="col-4">
                 <span className="submittedTaskHeading">Tasks</span>
+                </div>
+                <div className="col-4">
                 <span className="submittedPriorityHeading">Priority</span>
+                </div>
+                <div className="col-4">
                 <span className="submittedTasksActions">Actions</span>
+                </div>
+                </div>
               </p>
             ) : (
               <p className="submitTasksHeading">Submitted Tasks</p>
@@ -104,13 +112,13 @@ const CompletedTasks = ({listId ,showSubmittedTasks, changeShowSubmittedTasks,do
                       >
                         <div className="card-body ">
                           <div className="row">
-                            <div className="col-6">
+                            <div className="col-6 col-sm-6 col-lg-6 col-md-6 col-xl-6 col-xxl-6">
                               <p className="card-title">{x.taskName}</p>
                             </div>
-                            <div className="col-4">
+                            <div className="col-3 col-sm-4 col-lg-4 col-md-4 col-xl-4 col-xxl-4">
                               <p className="card-title">{x.priority}</p>
                             </div>
-                            <div className="col-2">
+                            <div className="col-3 col-sm-2 col-lg-2 col-md-2 col-xl-2 col-xxl-2">
                               <button
                                 type="button"
                                 className="btn  completedTasksButton"

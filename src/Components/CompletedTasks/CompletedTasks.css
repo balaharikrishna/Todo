@@ -55,17 +55,13 @@
 .submitTasksMainHeading {
   color: white;
   font-weight: bolder;
-  margin: 0;
   font-size: 80%;
 }
-.submitTasksMainHeading .submittedTaskHeading {
-  margin-left: 5%;
-}
 .submitTasksMainHeading .submittedPriorityHeading {
-  margin-left: 33%;
+  float: right;
 }
 .submitTasksMainHeading .submittedTasksActions {
-  margin-left: 20%;
+  float: right;
 }
 
 .modal-footerCompletedTasks {
