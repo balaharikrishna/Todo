@@ -156,7 +156,7 @@ const Task = ({
               >
                 <div className="card-body taskCardBody">
                   <div className="row">
-                    <div className="col-3">
+                    <div className="col-2">
                       <input
                         type="checkbox"
                         label=""
@@ -166,22 +166,22 @@ const Task = ({
                         autoComplete="off"
                       />
                     </div>
-                    <div className="col-4">
+                    <div className="col-5 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                       <p className="card-title">{x.taskName}</p>
                     </div>
-                    <div className="col-3">
+                    <div className="col-2 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                       <p className="card-title">{x.priority}</p>
                     </div>
-                    <div className="col-2">
+                    <div className="col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                       <div className="row">
-                        <div className="col-6">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                           <i
                             className="fa fa-pencil editOption"
                             onClick={() => editTask(x.id)}
                             aria-hidden="true"
                           ></i>
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                           <i
                             className="fa fa-trash deleteOption"
                             onClick={() => deleteTask(x.id)}
@@ -201,13 +201,13 @@ const Task = ({
           <div className="row">
             <div className="alert noTaskAvailable" role="alert">
               {listName
-                ? `No Tasks Available for  ${listName} ...`
+                ? `No Tasks Available for  ${listName} .`
                 : "No data Available"}
             </div>
-            <div className="col-12">{
+            <div className="col-12 text-center">{
               listName ?  <button
               type="button"
-              className="btn btn-primary addTaskButton"
+              className="btn btn-primary addTaskButton "
               onClick={changeShowStateTask}
             >
               Add Task

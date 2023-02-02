@@ -37,7 +37,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
     listId = listId+1;
     setListName("");
     doListsUpdated(Math.random());
-    notify("Record Added Successfully");
+    notify("List Added Successfully");
   };
 
   const addList = (e) => {
@@ -52,7 +52,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
     localData[index].listName = listName;
     localStorage.setItem("tododata", JSON.stringify(localData));
     doListsUpdated(Math.random()); 
-    notify("Record Updated Successfully");
+    notify("List Updated Successfully");
   };
 
   const notify = (note) => {
@@ -70,7 +70,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
   }
   
   return (
-    <div className="container">
+    <div className="container col-10 col-xs-10 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-5">
       <Modal show={show} onHide={changeShowState}>
         <form onSubmit={editListId > 0 ? updateList : addList}>
           <Modal.Header closeButton className="addListHeader">

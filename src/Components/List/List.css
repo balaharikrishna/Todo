@@ -2,8 +2,8 @@
   -webkit-animation: fadeIn 2s;
           animation: fadeIn 2s;
   cursor: pointer;
-  width: 20rem;
-  margin: 0.625rem 0 0.625rem 0.938rem;
+  width: auto;
+  margin: 0.625rem 0.938rem 0.625rem 0.938rem;
 }
 @-webkit-keyframes fadeIn {
   0% {
@@ -34,5 +34,10 @@
   color: white;
   text-align: center;
   width: 13.063rem !important;
-  margin: 9.375rem 0 0 3.75rem;
+  margin: 5vh auto auto auto;
+}
+.listMainDiv .addListButtonWithNoLists {
+  background-color: lightseagreen;
+  color: white;
+  margin: 5% 0 5% 0;
 }/*# sourceMappingURL=List.css.map */

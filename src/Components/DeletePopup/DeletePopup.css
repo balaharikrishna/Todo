@@ -1,6 +1,6 @@
 .deleteModel .modal-content {
-  width: 55%;
-  margin: 35%;
+  width: 80%;
+  margin: 35% auto auto auto;
 }
 .deleteModel .modalBody {
   background-color: lightpink;
