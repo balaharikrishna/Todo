@@ -5,17 +5,28 @@
 
     .addTaskFloatingButton {
         border-radius: 100%;
+
+        @media only screen and (max-width: 576px) and (max-height: 920px) {
+            font-size: 25px;
+            width: 50px;
+        }
+
+        @media only screen and (max-width: 576px) and (max-height:740px) {
+            font-size: 25px;
+            width: 50px;
+        }
     }
 }
 
 .container {
 
-     height: auto;
+    height: auto;
+
     .twoGrids {
         position: relative;
 
         .noListAvailable {
-           margin: auto;
+            margin: auto;
         }
     }
 
@@ -28,7 +39,7 @@
         font-size: 170%;
         text-align: center;
         margin-top: 2%;
-        
+
     }
 
     .homeLeftGrid {
@@ -36,45 +47,77 @@
         overflow-x: hidden;
         border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
-        @media only screen and (min-height: 1080px) and (min-width:1400px){
+
+        @media only screen and (min-width:1200px) and (min-height: 800px) {
             height: 50.625rem;
-          }
+        }
+
         @media only screen and (min-height: 900px) and (max-height:1080px) and (min-width:1400px) {
             height: 40.625rem;
-          }
-        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
-          height: 32.625rem;
         }
-        @media only screen and (min-width: 576px)and (max-height: 768px) {
+
+        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
+            height: 31.625rem;
+        }
+
+        ///mobile and tabs
+        @media only screen and (min-width: 576px) and (max-width:992px) and (max-height: 1400px) {
+            height: 38vh;
+        }
+
+        @media only screen and (min-width: 576px) and (max-height: 768px) {
             height: 20.625rem;
-          }
-          @media only screen and (max-width: 576px) {
-            height: 20.625rem;
-          }
+        }
+
+        @media only screen and (max-width: 576px) and (max-height: 920px) {
+            height: auto;
+            max-height: 35.5vh;
+        }
+
+        @media only screen and (max-width: 576px) and (max-height:740px) {
+            height: auto;
+            max-height: 32.5vh;
+        }
     }
 
     .homeRightGrid {
         overflow-y: auto;
         overflow-x: hidden;
-        height: 20.625rem;
         border-radius: 0 0 0.8rem 0.8rem;
         background-color: lightblue;
-        @media only screen and (min-height: 1080px) and (min-width:1400px){
+
+        @media only screen and (min-height: 1080px) and (min-width:1400px) {
             height: 50.625rem;
-          }
+        }
+
         @media only screen and (min-height: 900px) and (max-height:1080px) and (min-width:1400px) {
             height: 40.625rem;
-          }
-        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
-          height: 32.625rem;
         }
+
+        @media only screen and (min-height: 768px) and (min-width:992px) and (max-height:900px) {
+            height: 31.625rem;
+        }
+
+        ///mobile and tabs
+        @media only screen and (min-width: 576px) and (max-width:992px) and (max-height: 1400px) {
+            height: 38vh;
+        }
+
         @media only screen and (min-width: 576px)and (max-height: 768px) {
             height: 20.625rem;
-          }
-          @media only screen and (max-width: 576px) {
-            height: 20.625rem;
-          }
-        
+        }
+
+        @media only screen and (max-width: 576px) and (max-height: 920px) {
+            height: auto;
+            max-height: 35.5vh;
+            padding-bottom: 15%;
+        }
+
+        @media only screen and (max-width: 576px) and (max-height:740px) {
+            height: auto;
+            max-height: 32.5vh;
+        }
+
     }
 
     #homeRightGrid::-webkit-scrollbar-track {
@@ -133,135 +176,141 @@
             .completedHeading {
                 margin-left: 4%;
             }
-    
+
             .taskHeading {
                 margin-left: 11%;
             }
-    
+
             .priorityHeading {
                 margin-left: 24%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 15%;
             }
-    
+
         }
+
         @media only screen and (min-width: 992px) and (max-width:1400px) {
             .completedHeading {
                 margin-left: 4%;
             }
-    
+
             .taskHeading {
                 margin-left: 11%;
             }
-    
+
             .priorityHeading {
                 margin-left: 22%;
             }
-    
+
             .actionsTasksHeading {
                 margin-left: 18%;
             }
-    
+
         }
+
         @media only screen and (min-width: 768px) and (max-width:992px) {
             .completedHeading {
                 margin-left: 4%;
             }
-    
+
             .taskHeading {
                 margin-left: 11%;
             }
-    
+
             .priorityHeading {
                 margin-left: 22%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 15%;
             }
-    
+
         }
+
         @media only screen and (min-width:576px) and (max-width:768px) {
             .completedHeading {
                 margin-left: 4%;
             }
-    
+
             .taskHeading {
                 margin-left: 11%;
             }
-    
+
             .priorityHeading {
                 margin-left: 17%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 13%;
             }
-    
+
         }
-        @media only screen and (min-width:460px) and (max-width:576px){
+
+        @media only screen and (min-width:460px) and (max-width:576px) {
             .completedHeading {
                 margin-left: 4%;
             }
-    
+
             .taskHeading {
                 margin-left: 11%;
             }
-    
+
             .priorityHeading {
                 margin-left: 25%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 13%;
             }
-    
+
         }
-        @media only screen and (min-width:320px) and (max-width:460px){
+
+        @media only screen and (min-width:320px) and (max-width:460px) {
             .completedHeading {
                 margin-left: 2%;
             }
-    
+
             .taskHeading {
                 margin-left: 7%;
             }
-    
+
             .priorityHeading {
                 margin-left: 18%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 2%;
             }
-    
+
         }
-        @media only screen and (max-width:320px){
+
+        @media only screen and (max-width:320px) {
             .completedHeading {
                 margin-left: 2%;
             }
-    
+
             .taskHeading {
                 margin-left: 7%;
             }
-    
+
             .priorityHeading {
                 margin-left: 7%;
             }
-    
+
             .actionsTasksHeading {
                 float: right;
                 margin-right: 2%;
             }
-    
+
         }
-        
+
         color: white;
         font-weight: bolder;
         margin: 0.625rem 0 0 0;

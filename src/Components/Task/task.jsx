@@ -201,7 +201,7 @@ const Task = ({
           <div className="row">
             <div className="alert noTaskAvailable" role="alert">
               {listName
-                ? `No Tasks Available for  ${listName} ...`
+                ? `No Tasks Available for  ${listName} .`
                 : "No data Available"}
             </div>
             <div className="col-12 text-center">{

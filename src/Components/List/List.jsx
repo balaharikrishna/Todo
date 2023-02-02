@@ -74,7 +74,7 @@ useEffect(() => {
           <div className="row">
             <div className="col-12">
               <div className="col-12 alert noListsAvailable" role="alert">
-                No Lists Available....
+                Please Add Lists.
               </div>
             </div>
             <div className="col-12 text-center">

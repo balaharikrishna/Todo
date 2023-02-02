@@ -37,7 +37,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
     listId = listId+1;
     setListName("");
     doListsUpdated(Math.random());
-    notify("Record Added Successfully");
+    notify("List Added Successfully");
   };
 
   const addList = (e) => {
@@ -52,7 +52,7 @@ const Addlist = ({ show, changeShowState, editListId, doListsUpdated,listsUpdate
     localData[index].listName = listName;
     localStorage.setItem("tododata", JSON.stringify(localData));
     doListsUpdated(Math.random()); 
-    notify("Record Updated Successfully");
+    notify("List Updated Successfully");
   };
 
   const notify = (note) => {

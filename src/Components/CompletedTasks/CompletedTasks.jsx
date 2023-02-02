@@ -79,13 +79,13 @@ const CompletedTasks = ({listId ,showSubmittedTasks, changeShowSubmittedTasks,do
             {finishedTasks?.length > 0 ? (
               <p className="submitTasksMainHeading">
                 <div className="row">
-                <div className="col-4">
+                <div className="col-6">
                 <span className="submittedTaskHeading">Tasks</span>
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                 <span className="submittedPriorityHeading">Priority</span>
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                 <span className="submittedTasksActions">Actions</span>
                 </div>
                 </div>
