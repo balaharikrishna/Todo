@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/Todo/static/css/main.3e3275be.css",
-    "main.js": "/Todo/static/js/main.1c5dfda7.js",
+    "main.js": "/Todo/static/js/main.b38a32e1.js",
     "static/js/787.b8fa26a9.chunk.js": "/Todo/static/js/787.b8fa26a9.chunk.js",
     "static/media/bookandpentodo.webp": "/Todo/static/media/bookandpentodo.e5a03534f4055987fcd3.webp",
+    "service-worker.js": "/Todo/service-worker.js",
     "index.html": "/Todo/index.html",
     "main.3e3275be.css.map": "/Todo/static/css/main.3e3275be.css.map",
-    "main.1c5dfda7.js.map": "/Todo/static/js/main.1c5dfda7.js.map",
+    "main.b38a32e1.js.map": "/Todo/static/js/main.b38a32e1.js.map",
     "787.b8fa26a9.chunk.js.map": "/Todo/static/js/787.b8fa26a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3e3275be.css",
-    "static/js/main.1c5dfda7.js"
+    "static/js/main.b38a32e1.js"
   ]
 }
